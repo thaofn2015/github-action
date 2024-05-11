@@ -1,4 +1,5 @@
 name: Deployment Exercise 1
+run-name: Day la run name
 on: push
 jobs:
   deploy:
