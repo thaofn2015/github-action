@@ -1,5 +1,4 @@
 name: Deployment Exercise (github-test)
-run-name: Day la run name (github-test)
 on: push
 jobs:
   deploy:
