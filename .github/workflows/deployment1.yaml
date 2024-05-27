@@ -1,4 +1,4 @@
-name: Deployment Exercise 1
+name: Deployment Exercise 1 (master)
 run-name: Day la run name (master)
 on: push
 jobs:
