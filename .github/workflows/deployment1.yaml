@@ -1,5 +1,4 @@
 name: Deployment Exercise 1 (master)
-run-name: Day la run name (master)
 on: push
 jobs:
   deploy:
@@ -16,4 +15,4 @@ jobs:
       - name: Build code
         run: npm run build
       - name: Deploy code
-        run: echo "Deploying..."
+        run: echo "Deploying...master"
