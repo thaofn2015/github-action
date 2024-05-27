@@ -1,7 +1,7 @@
-name: Deployment Exercise (github-test)
+name: Deployment Exercise (branches github-test)
 on:
   push:
-    branches: master
+    branches: github-test
 jobs:
   deploy:
     runs-on: ubuntu-latest
