@@ -2,7 +2,7 @@ name: Deployment Exercise 1 (master)
 on: push
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: cicd-t
     steps:
       - name: Get code
         uses: actions/checkout@v3
