@@ -7,8 +7,8 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
-        run: echo "thao2" > test.txt
+        run: echo "thao2" > test2.txt
       - name: Lint
-        run: cat test.txt
+        run: cat test2.txt
       - name: Deploy code
-        run: echo "Deploying.qestq.master 2"
+        run: ls -l
