@@ -1,5 +1,7 @@
 name: Deployment Exercise 2
 on: push
+concurrency:
+  group: master
 jobs:
   lint:
     runs-on: cicd-t
