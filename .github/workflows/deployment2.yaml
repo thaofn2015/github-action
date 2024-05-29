@@ -2,7 +2,7 @@ name: Deployment Exercise 2
 on: push
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: cicd-t
     steps: 
       - name: Get code
         uses: actions/checkout@v3
