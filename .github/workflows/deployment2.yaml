@@ -11,4 +11,4 @@ jobs:
       - name: Lint
         run: cat test.txt
       - name: Deploy code
-        run: echo "Deploying..."
+        run: ls -l
