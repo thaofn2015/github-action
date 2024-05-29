@@ -1,10 +1,8 @@
 name: Deployment Exercise 1 (master)
 on: push
-concurrency:
-  group: master
 jobs:
   deploy:
-    runs-on: cicd-t
+    runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3

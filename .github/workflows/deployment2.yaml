@@ -1,10 +1,8 @@
 name: Deployment Exercise 2
 on: push
-concurrency:
-  group: master
 jobs:
   lint:
-    runs-on: cicd-t
+    runs-on: ubuntu-latest
     steps: 
       - name: Get code
         uses: actions/checkout@v3
