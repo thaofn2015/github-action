@@ -8,6 +8,3 @@ jobs:
     uses: ./.github/workflows/reuse.yaml
     with:
       runner: self-hosted
-
-  finish:
-    run: echo "Call reusable workflow"
