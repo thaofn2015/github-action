@@ -5,7 +5,7 @@ on:
 
 jobs:
   call-reusable-workflow:
-    uses: reusable-workflow/reuse.yaml
+    uses: ./.github/workflows/reusable-workflow/reuse.yaml
     with:
       runner: self-hosted
 
