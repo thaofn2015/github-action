@@ -1,1 +1,18 @@
-name: test
+name: Test for reusable workflow
+
+on:
+  workflow_call:
+    inputs:
+      runner:
+        description: self-hosted runnerの識別子
+        required: true
+        type: string
+		
+jobs:
+  build:
+    name: day la reusable workflow
+    runs-on: ${{ inputs.runner }}
+
+    steps:
+      - name: First step
+        run: echo "Hello world"
