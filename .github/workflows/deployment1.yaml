@@ -6,5 +6,7 @@ jobs:
     steps:
       - name: Check aws cli
         run: aws --version
+      - name: Setup Docker
+        uses: docker/setup-buildx-action@v3
       - name: Check docker
         run: docker -v
