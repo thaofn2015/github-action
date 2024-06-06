@@ -1,5 +1,5 @@
 name: Deployment Exercise 2
-on: push
+on: issues
 jobs:
   lint:
     runs-on: cicd-t
