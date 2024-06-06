@@ -1,12 +1,13 @@
-name: Deployment Exercise 1 (master)
-on: push
+name: Call reusable workflow
+
+on:
+  push:
+
 jobs:
-  deploy:
-    runs-on: self-hosted
-    steps:
-      - name: Check aws cli
-        run: aws --version
-      - name: Setup Docker
-        uses: docker/setup-buildx-action@v3
-      - name: Check docker
-        run: docker -v
+  call-reusable-workflow:
+    uses: reusable-workflow/reuse.yaml
+    with:
+      runner: self-hosted
+
+  finish:
+    run: echo "Call reusable workflow"
