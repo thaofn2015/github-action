@@ -7,12 +7,10 @@ on:
         description: self-hosted runn
         required: true
         type: string
-		
 jobs:
   build:
     name: build 
     runs-on: ${{ inputs.runner }}
-
     steps:
       - name: First step
         run: echo "Hello world"
