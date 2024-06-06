@@ -2,13 +2,9 @@ name: Deployment Exercise 1 (master)
 on: push
 jobs:
   deploy:
-    runs-on: cicd-t
+    runs-on: self-hosted
     steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Install dependencies
-        run: echo "thao2" > test2.txt
-      - name: Lint
-        run: cat test2.txt
-      - name: Deploy code
-        run: ls -l
+      - name: Check aws cli
+        run: aws --version
+      - name: Check docker
+        run: docker -v
