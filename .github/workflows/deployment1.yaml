@@ -16,5 +16,5 @@ jobs:
               "text": "GitHub Action build result"
             }
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
