@@ -4,7 +4,16 @@ on:
   push:
 
 jobs:
-  call-reusable-workflow:
-    uses: ./.github/workflows/reuse.yaml
-    with:
-      runner: self-hosted
+  slack-notification:
+    name: Slack notification
+    runs-on: self-hosted
+    steps:
+      - name: Slack
+        uses: slackapi/slack-github-action@v1.26.0
+        with:
+          payload: |
+            {
+              "text": "GitHub Action build result:
+            }
+    env:
+      SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
