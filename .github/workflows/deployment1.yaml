@@ -4,10 +4,16 @@ on:
   push:
 
 jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: test
+        run: pwd
   slack-notification:
     name: Slack notification
     uses: ./.github/workflows/reuse.yaml
     with:
-      message: 'hello'
+      message: |
+       ${{ steps.build.conslusion == 'success' && 'success' || 'failure' }}
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
