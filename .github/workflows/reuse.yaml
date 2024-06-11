@@ -2,12 +2,13 @@ name: notification
 
 on:
   workflow_call:
+    inputs:
       message:
         description: "self"
         required: true
         type: string
     secrets:
-      SLACK_WEBHOOK_URL :
+      SLACK_WEBHOOK_URL:
         required: true
 jobs:
   slack:
