@@ -11,8 +11,9 @@ jobs:
         run: pwd
   slack-notification:
     name: Slack notification
+    needs: build
     uses: ./.github/workflows/reuse.yaml
     with:
-      message: ${{ jobs.build.result == 'success' && 'success' || 'failure' }}
+      message: ${{ needs.build.result == 'success' && 'success' || 'failure' }}
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
