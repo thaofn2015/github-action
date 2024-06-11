@@ -14,6 +14,6 @@ jobs:
     uses: ./.github/workflows/reuse.yaml
     with:
       message: |
-       ${{ steps.build.conslusion == 'success' && 'success' || 'failure' }}
+       ${{ steps.build.conclusion == 'success' && 'success' || 'failure' }}
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
