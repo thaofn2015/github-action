@@ -18,6 +18,6 @@ jobs:
       - name: slack
         uses: slackapi/slack-github-action@v1.24.0
         with:
-          payload: "{ "text": "${{ inputs.message }}" }"
+          payload: '{ "text": "${{ inputs.message }}" }'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
