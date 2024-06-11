@@ -1,16 +1,25 @@
-name: Test for reusable workflow
+name: notification 
 
 on:
   workflow_call:
-    inputs:
-      runner:
-        description: self-hosted runn
+      message:
+        description: "self"
         required: true
         type: string
+    secrets:
+      SLACK_WEBHOOK_URL :
+        required: true
 jobs:
-  build:
-    name: build 
-    runs-on: ${{ inputs.runner }}
+  slack:
+    name: Slack
+    runs-on: self-hosted
     steps:
-      - name: First step
-        run: echo "Hello world"
+      - name: slack
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+              "text": "${{ inputs.message }}"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
