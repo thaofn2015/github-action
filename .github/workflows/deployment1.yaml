@@ -6,18 +6,8 @@ on:
 jobs:
   slack-notification:
     name: Slack notification
-    runs-on: self-hosted
-    steps:
-      - name: Slack
-        uses: slackapi/slack-github-action@v1.26.0
-        with:
-          payload: |
-            ${{ github.ref == 'refs/heads/main' && 
-            '{
-              "text": "GitHub Action build result"
-            }' 
-            || '{
-              "text": "GitHub Action build result22222"
-            }' }}
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
+    uses: ./.github/workflows/reuse.yaml
+    with:
+      message: 'hello'
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
