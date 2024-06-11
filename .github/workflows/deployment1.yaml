@@ -9,5 +9,5 @@ jobs:
     uses: ./.github/workflows/reuse.yaml
     with:
       message: 'hello'
-    env:
+    secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
