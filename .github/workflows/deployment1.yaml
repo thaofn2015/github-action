@@ -13,10 +13,11 @@ jobs:
       - name: test
         run: pwd
   slack-notification:
+    if: ${{ env.BUILD_LINK == 'abc' }}
     name: Slack notification
     needs: build
     uses: ./.github/workflows/reuse.yaml
     with:
-      message: ${{ env.BUILD_LINK == 'abc' }}
+      message: 'aaaaa'
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
