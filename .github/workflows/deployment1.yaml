@@ -3,6 +3,9 @@ name: Call reusable workflow
 on:
   push:
 
+env:
+  BUILD_LINK: https://xxxxx
+
 jobs:
   build:
     runs-on: self-hosted
@@ -14,9 +17,6 @@ jobs:
     needs: build
     uses: ./.github/workflows/reuse.yaml
     with:
-      message: |-
-        ${{ needs.build.result == 'success'
-        && 'succe\nss'
-        || 'failure' }}
+      message: ${{ env.BUILD_LINK }} hello
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
