@@ -17,6 +17,6 @@ jobs:
     needs: build
     uses: ./.github/workflows/reuse.yaml
     with:
-      message: ${{ env.BUILD_LINK }} hello
+      message: $BUILD_LINK \nhello
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
