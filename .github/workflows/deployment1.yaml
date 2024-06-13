@@ -11,7 +11,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: test
-        run: pwd
+        run: 'echo ${{ github.ref }} '
   slack-notification:
     if: ${{ env.BUILD_LINK == 'abc' }}
     name: Slack notification
