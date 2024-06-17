@@ -4,14 +4,14 @@ on:
   push:
 
 env:
-  BUILD_LINK: https://xxxxx
+  BUILD_LINK: "fromJSON({'false': '${GITHUB_REF:11:3}', 'true': 'dev'})[${GITHUB_REF:11:7} =='develop']"
 
 jobs:
   build:
     runs-on: self-hosted
     steps:
       - name: test
-        run: 'echo ${{ github.ref }} '
+        run: 'echo ${{ env.BUILD_LINK }} '
   slack-notification:
     name: Slack notification
     needs: build
