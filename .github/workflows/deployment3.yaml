@@ -21,7 +21,7 @@ jobs:
 
   job3:
     runs-on: self-hosted
-    needs: |
+    needs:
       - job2
       - job1
     steps:
