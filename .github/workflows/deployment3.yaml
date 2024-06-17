@@ -1,18 +1,27 @@
-name: Deployment Exercise (github-test)
-on: push
+name: test
+
+on:
+  push:
+    branches:
+      - "master"
+      - "github-test"
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  job1:
+    runs-on: self-hosted
     steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Install dependencies
-        run: npm ci
-      - name: Lint
-        run: npm run lint
-      - name: Test code
-        run: npm run test
-      - name: Build code
-        run: npm run build
-      - name: Deploy code
-        run: echo "Deploying...github-test from deployment3"
+      - name: job1
+        run: echo "job1"
+
+  job2:
+    if: ${{ github.ref == 'refs/heads/github-test' }}
+    runs-on: self-hosted
+    steps:
+      - name: job2
+        run: echo "job2"
+
+  job3:
+    runs-on: self-hosted
+    needs: job2
+    steps:
+      - name: job3
+        run: echo "job3"
