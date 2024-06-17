@@ -7,6 +7,8 @@ on:
         description: "self"
         required: true
         type: string
+      text:
+        type: string
     secrets:
       SLACK_WEBHOOK_URL:
         required: true
@@ -21,3 +23,7 @@ jobs:
           payload: '{ "text": "${{ inputs.message }}" }'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      - name: test json
+        run: |
+           echo ${{ fromJSON(inputs.text) }}
+        
