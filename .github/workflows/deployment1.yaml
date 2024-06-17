@@ -4,7 +4,7 @@ on:
   push:
 
 env:
-  BUILD_LINK: ${{ fromJSON({'false': '${GITHUB_REF:11:3}', 'true': 'dev'}) }}
+  BUILD_LINK: https://xxxxxxz
 
 jobs:
   build:
@@ -17,6 +17,6 @@ jobs:
     needs: build
     uses: ./.github/workflows/reuse.yaml
     with:
-      message: 'aaaaa'
+      message: '["hello","world"]'
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
