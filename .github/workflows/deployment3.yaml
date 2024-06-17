@@ -21,7 +21,9 @@ jobs:
 
   job3:
     runs-on: self-hosted
-    needs: job2
+    needs: |
+      - job2
+      - job1
     steps:
       - name: job3
         run: echo "job3"
