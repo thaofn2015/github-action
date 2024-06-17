@@ -4,7 +4,7 @@ on:
   push:
 
 env:
-  BUILD_LINK: fromJSON({'false': '${GITHUB_REF:11:3}', 'true': 'dev'})[${GITHUB_REF:11:7} =='develop']
+  BUILD_LINK: ${{ fromJSON({'false': '${GITHUB_REF:11:3}', 'true': 'dev'}) }}
 
 jobs:
   build:
