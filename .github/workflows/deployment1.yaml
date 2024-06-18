@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - name: test
+      - id: test
         run: 'echo ${{ env.BUILD_LINK }} '
   slack-notification:
     name: Slack notification
