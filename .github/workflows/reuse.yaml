@@ -25,5 +25,5 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: test json
         run: |
-           echo '${{ inputs.text }} | jq -r '.[0]''
-        
+           echo ${{ inputs.text }} | jq -r '.[0]'
+     
