@@ -18,7 +18,13 @@ jobs:
   slack:
     name: Slack
     runs-on: self-hosted
+    outputs:
+      msg: ${{ steps.prepare.outputs.msg }}
     steps:
+      - name: prepare msg
+        id: prepare
+        run: |
+          echo "msg="${echo ${{ inputs.message }} | sed -e ':a;N;$!ba;s/\n/ /g' }
       - name: slack
         uses: slackapi/slack-github-action@v1.24.0
         with:
