@@ -19,6 +19,7 @@ jobs:
     with:
       message: 'aaaaaa'
       text: 'hello,world'
-      command: 'echo "hello"'
+      command: 
+         echo "hello"
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
