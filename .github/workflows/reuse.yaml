@@ -9,6 +9,8 @@ on:
         type: string
       text:
         type: string
+      command:
+        type: string
     secrets:
       SLACK_WEBHOOK_URL:
         required: true
@@ -27,4 +29,7 @@ jobs:
         run: |
            readarray -d , -t tags <<< ${{ inputs.text }}
            echo ${tags[0]}
+      - name: test command
+        run: |
+           ${{ inputs.command }}
      
