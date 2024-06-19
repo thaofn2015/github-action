@@ -17,10 +17,10 @@ jobs:
     needs: build
     uses: ./.github/workflows/reuse.yaml
     with:
-      message: 'aaaaaa'
-      text: |
-        hello
-        world
+      message: |
+        aaaaaa
+        bbbbbb
+      text: 'hello,world'
       command: |
          echo "hello"
     secrets:
