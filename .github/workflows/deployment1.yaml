@@ -18,7 +18,9 @@ jobs:
     uses: ./.github/workflows/reuse.yaml
     with:
       message: 'aaaaaa'
-      text: 'hello,world'
+      text:
+        - hello
+        - world
       command: |
          echo "hello"
     secrets:
