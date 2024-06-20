@@ -17,9 +17,10 @@ jobs:
     needs: build
     uses: ./.github/workflows/reuse.yaml
     with:
-      message: |
-        aaaaaa
-        bbbbbb
+      message: |-
+         ${{ needs.build.result  == 'success' 
+        && ${{ github.run_id }}
+        || '${{ github.run_id }}' }}
       text: 'hello,world'
       command: |
          echo "hello"
