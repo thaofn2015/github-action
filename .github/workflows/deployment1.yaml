@@ -19,7 +19,7 @@ jobs:
     with:
       message: |-
          ${{ needs.build.result  == 'success' 
-        && '${{ github.run_id }}'
+        && 'aaaaa'
         || '${{ github.run_id }} ERROR!!' }}
       text: 'hello,world'
       command: |
