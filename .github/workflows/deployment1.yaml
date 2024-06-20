@@ -18,9 +18,7 @@ jobs:
     uses: ./.github/workflows/reuse.yaml
     with:
       message: |-
-         ${{ needs.build.result  == 'success' 
-        && 'aaaaa'
-        || ' ERROR!!' }}
+         ${{ needs.build.result == 'success' && 'success' || 'failure' }}
       text: 'hello,world'
       command: |
          echo "hello"
