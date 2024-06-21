@@ -10,6 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Test
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: aa.json
       - id: test
         run: 'echo ${{ env.BUILD_LINK }} '
   slack-notification:
