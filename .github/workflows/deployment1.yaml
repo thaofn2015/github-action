@@ -15,7 +15,9 @@ jobs:
         with:
           task-definition: aa.json
       - id: test
-        run: 'echo ${{ env.BUILD_LINK }} '
+        run: |
+          echo ${{ env.BUILD_LINK }}
+          echo ${{ github.action_status }}
   slack-notification:
     name: Slack notification
     needs: build
@@ -28,3 +30,10 @@ jobs:
          echo "hello"
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
+  test-github-action-status:
+    runs-on: self-hosted
+    steps:
+      - name: test
+        run: |
+          echo ${{ github.action_status }}
+    
