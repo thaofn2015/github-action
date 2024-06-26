@@ -30,6 +30,7 @@ jobs:
   test-github-action-status:
     if: ${{ always() }}
     runs-on: self-hosted
+    needs: slack-notification
     steps:
       - name: test
         run: |
