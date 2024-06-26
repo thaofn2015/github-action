@@ -28,7 +28,7 @@ jobs:
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
   test-github-action-status:
-    if: ${{ always() }}
+    if: ${{ always() && success()}}
     runs-on: self-hosted
     needs: slack-notification
     steps:
