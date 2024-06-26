@@ -35,4 +35,13 @@ jobs:
       - name: test
         run: |
           echo ${{ github.action_status }}
+
+  test-github-action-status_2:
+    if: ${{ always() && failure()}}
+    runs-on: self-hosted
+    needs: slack-notification
+    steps:
+      - name: test
+        run: |
+          echo ${{ github.action_status }}
     
