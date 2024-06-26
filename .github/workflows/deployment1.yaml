@@ -15,6 +15,7 @@ jobs:
           echo ${{ env.BUILD_LINK }}
           echo ${{ github.action_status }}
   slack-notification:
+    if: false
     name: Slack notification
     needs: build
     uses: ./.github/workflows/reuse.yaml
@@ -27,6 +28,7 @@ jobs:
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
   test-github-action-status:
+    if: ${{ always() }}
     runs-on: self-hosted
     steps:
       - name: test
