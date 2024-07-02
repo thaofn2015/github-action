@@ -2,7 +2,8 @@ name: Call reusable workflow
 
 on:
   push:
-    "master"
+    branches:
+      - "master"
 
 env:
   BUILD_LINK: https://xxxxxxz
