@@ -17,10 +17,10 @@ jobs:
           GR: ${{ github.ref }}
         run: |
           arr=(${GR//// })
-          echo ${ arr[0] }
-          echo ${ arr[1] }
-          echo ${ arr[2] }
-          echo ${ arr } 
+          echo ${arr[0]}
+          echo ${arr[1]}
+          echo ${arr[2]}
+          echo ${arr} 
           echo ${{ env.BUILD_LINK }}
           echo ${{ github.action_status }}
   
