@@ -16,7 +16,7 @@ jobs:
         env:
           GR: ${{ github.ref }}
         run: |
-          arr = (${GR////})
+          arr = (${GR//// })
           echo ${ arr[0] }
           echo ${ arr[1] }
           echo ${ arr[2] }
