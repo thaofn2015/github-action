@@ -11,10 +11,10 @@ env:
 jobs:
   build:
     runs-on: self-hosted
-    env:
-      GR: ${{ github.ref }}
     steps:
       - id: test
+        env:
+          GR: ${{ github.ref }}
         run: |
           arr = (${GR////})
           echo ${ arr[0] }
