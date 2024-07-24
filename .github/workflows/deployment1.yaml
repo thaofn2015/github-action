@@ -11,11 +11,9 @@ env:
 jobs:
   slack-notification:
     name: Slack notification
-    env:
-      sha: ${GITHUB_SHA:0:8}
     uses: ./.github/workflows/reuse.yaml
     with:
-      message: '${{ env.sha }}'
+      message: ${{ format('{0}', github.sha) }}
       text: 'hello,world'
       command: |
          echo "hello"
