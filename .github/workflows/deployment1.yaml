@@ -10,7 +10,6 @@ env:
 
 jobs:
   slack-notification:
-    if: false
     name: Slack notification
     uses: ./.github/workflows/reuse.yaml
     with:
