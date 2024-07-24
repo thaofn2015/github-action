@@ -12,7 +12,6 @@ jobs:
   slack-notification:
     if: false
     name: Slack notification
-    needs: build
     uses: ./.github/workflows/reuse.yaml
     with:
       message: '${{ github.sha }}\n\ ${GITHUB_SHA:0:8}'
