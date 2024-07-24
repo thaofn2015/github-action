@@ -9,41 +9,15 @@ env:
   BUILD_LINK: https://xxxxxxz
 
 jobs:
-  build:
-    runs-on: self-hosted
-    steps:
-      - id: test
-        run: |
-          echo ${{ env.BUILD_LINK }}
-          echo ${{ github.action_status }}
   slack-notification:
     if: false
     name: Slack notification
     needs: build
     uses: ./.github/workflows/reuse.yaml
     with:
-      message: |-
-         ${{ (needs.build.result == 'success' && needs.build.result == 'failed') && format('aaabbbbbba={0}', github.run_id) || 'failure' }}
+      message: '${{ github.sha }}\n\ ${GITHUB_SHA:0:8}'
       text: 'hello,world'
       command: |
          echo "hello"
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_TOKEN }}
-  test-github-action-status:
-    if: ${{ always() && !failure()}}
-    runs-on: self-hosted
-    needs: slack-notification
-    steps:
-      - name: test
-        run: |
-          echo ${{ github.action_status }}
-
-  test-github-action-status_2:
-    if: ${{ always() && failure()}}
-    runs-on: self-hosted
-    needs: slack-notification
-    steps:
-      - name: test
-        run: |
-          echo ${{ github.action_status }}
-    
