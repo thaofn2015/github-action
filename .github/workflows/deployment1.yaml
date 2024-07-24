@@ -13,7 +13,7 @@ jobs:
     name: Slack notification
     uses: ./.github/workflows/reuse.yaml
     with:
-      message: ${{ format('{0}', github.sha:0:8) }}
+      message: ${{ format('{0}', ${GITHUB_SHA:0:8}) }}
       text: 'hello,world'
       command: |
          echo "hello"
